@@ -1,0 +1,63 @@
+extends layout
+
+block head
+  title News | Chaz Southard
+
+block css
+  link(href='css/news.css', rel='stylesheet')
+
+block content
+  section.page.news-page
+    .page-head
+      h1 News &amp; Blog
+
+    .news.page-inner
+
+      - var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+      
+      - var posts = site.news
+      - posts.sort(function(a,b){return (new Date(a.date)) < (new Date(b.date))})
+
+      - var exhibits = site.news.exhibits
+      - exhibits.sort(function(a,b){return (new Date(a.date)) < (new Date(b.date))})
+      
+      - var current_date = new Date()
+
+      //-.upcoming
+        each exhibit in exhibits
+          - var date = new Date(exhibit.date)
+          if date > current_date
+            article.exhibit-item
+              .content
+                header
+                  h2.title
+                    a(href='.'+exhibit._url)
+                      = exhibit.title
+                  span.date
+                    = monthNames[date.getMonth()] + ' '
+                    = date.getDate() + ', '
+                    = date.getFullYear()
+                
+                p
+                  != exhibit.description
+
+      each post in posts
+        - var date = new Date(post.date)
+        article.news-item
+          
+            .thumb
+              a(href='.'+post._url): img(src='news/'+post.thumbnail)
+
+            .content
+              header
+                h2.title
+                  a(href='.'+post._url)
+                    = post.title
+                span.date
+                  = monthNames[date.getMonth()] + ' '
+                  = date.getDate() + ', '
+                  = date.getFullYear()
+              
+              p
+                != post.snippet + ' '
+                small: a(href='.'+post._url) read more &raquo;

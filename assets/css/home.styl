@@ -1,0 +1,110 @@
+@import '_settings'
+@import '_animations'
+@import 'jeet'
+
+hero_img = url('../img/home/hero.jpg')
+
+// backgrounds / colors for navigation boxes
+gallery_bg = url('../img/home/gallery-bg.jpg')
+gallery_color = rgba(0,0,0,0.7)
+
+words_bg = #FFF
+words_color = rgba(0,0,0,0.7)
+
+about_bg = #484343
+about_color = #50E3C2
+
+news_bg = #000
+news_color = #50E3C2
+
+body, html, .home-page
+  height: 100%
+
+.home-page
+  margin-top: 0
+  
+  .hero
+    background-image: hero_img
+    background-size: cover
+    background-position: center right
+    position: relative
+    height: 100%
+    
+    .hero-content
+      color: #FFF
+      text-align: center
+      width: 75%
+      h1
+        text-transform: uppercase
+        font-family: raleway
+        font-weight: 200
+        font-size: 3em
+    
+      +above(451px)
+        align(both)
+      +below(450px)
+        width: 100%
+        padding: 0 10px
+        box-sizing: border-box
+        align(vertical)
+        h1
+          font-size: 2em
+  
+    .arrow
+      absolute: bottom 30px left 50%
+      margin-left: -14px
+      a
+        bounce(2s, true, linear)
+        color: #FFF
+        font-size: 1.25em
+        display: block
+        padding: 5px 10px
+
+  nav
+    clearfix()
+    border: 1px solid #979797
+    border-width: 1px 0
+    
+    .item
+      col(1/2, gutter:0)
+      position: relative
+      height: 250px
+      border: 1px solid #979797
+      box-sizing: border-box
+      +below(625px)
+        stack()
+  
+      p
+        align()
+        text-align: center
+        text-transform: uppercase
+        letter-spacing: 2px
+        font-weight: 500
+        size: 210px 26px
+        line-height: 26px
+        border-width: 1px 0
+        border-style: solid
+        double-border(15px, 26px, false)
+        +below(300px)
+          width: auto
+          padding: 0 20px
+
+    .gallery
+      background: gallery_bg
+      p
+        color: gallery_color
+
+    .words
+      background: words_bg
+      p
+        color: words_color
+
+    .about
+      background: about_bg
+      p
+        color: about_color
+
+    .news
+      background: news_bg
+      p
+        color: news_color

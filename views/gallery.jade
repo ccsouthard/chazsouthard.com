@@ -1,0 +1,54 @@
+extends layout
+
+block head
+  title Gallery | Chaz Southard
+
+block css
+  link(href='css/gallery.css', rel='stylesheet')
+
+mixin load-artwork(mediums)
+  - locals.sorted_artwork = []
+
+  each medium in mediums
+    each art in site.content.artwork[medium]
+      - art['_attributes'] = {'data-medium':medium, 'data-date':art.date}
+      - art['data'] = function(key) {return this._attributes['data-'+key]}
+      - locals.sorted_artwork.push(art)
+
+  //- sort artwork by date then name
+  - locals.sorted_artwork.sort(function(a,b){
+    - var result = b.date - a.date;
+    - if (result == 0) {
+      - result = a.title.localeCompare(b.title);
+    - }
+    - return result;
+  - })
+
+block content
+  section.page.gallery-page
+    .page-head
+      h1 Gallery
+      .filter
+        span.box Filter:
+        a(href='#').box.date
+          span Year
+          ol.dropdown.hidden
+        a(href='#').box.medium
+          span Medium
+          ul.dropdown.hidden
+
+    .gallery.page-inner
+      +load-artwork(['oil', 'digital'])
+      include templates/gallery_inner
+
+  .gallery-modal
+    .close: a(href='#')
+    .previous: a(href='#')
+    .next: a(href='#')
+    .modal-inner
+    
+
+block js
+  script.
+    var artwork = !{JSON.stringify(locals.sorted_artwork)}
+  script(src='js/gallery.js')

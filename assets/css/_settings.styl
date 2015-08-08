@@ -1,0 +1,31 @@
+// font stacks
+helvetica-neue = "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif
+helvetica = "Helvetica Neue", Helvetica, Arial, sans-serif
+georgia = Georgia, Cambria, "Times New Roman", Times, serif
+lucidia-grande = "Lucida Grande", Tahoma, Verdana, Arial, sans-serif
+monospace = unquote("'Bitstream Vera Sans Mono', Consolas, Courier, monospace")
+verdana = Verdana, Geneva, sans-serif
+raleway = "Raleway", sans-serif
+freight-sans = "freight-sans-pro", helvetica-neue
+
+// default font settings
+font-stack = freight-sans
+font-size = 16
+font-color = #000
+font-light-color = #4D4D4D // rgba(0,0,0,0.7) on white
+
+header-height = 50px
+
+double-border(width, height, color)
+  &:before, &:after
+    position: absolute
+    content: ""
+    size: width height
+    border: 1px solid
+    if color
+      border-color: color
+    border-width: 0 1px 0 1px
+  &:before
+    left: 0
+  &:after
+    right: 0

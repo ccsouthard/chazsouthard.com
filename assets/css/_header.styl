@@ -1,0 +1,307 @@
+#header
+  fixed: top
+  color: #fff
+  width: 100%
+  z-index: 500
+  background-color: #000
+  border-bottom: 1px solid #FFF
+  height: header-height
+  overflow: hidden
+  
+  text-align: center
+  text-transform: uppercase
+  a
+    color: #fff
+
+  .share
+    absolute: left 20px
+    z-index: 600
+    
+    .share-btn
+      display: block
+      height: header-height
+      padding: 7px 5px 0
+      box-sizing: border-box
+      border: 1px solid #000
+      border-width: 1px 1px 0
+      box-sizing: border-box
+      color: #EEC142
+      font-size: 1.5em
+      &.expanded
+        border-color: #979797
+      span
+        display: block
+        size: 33px
+        line-height: 33px
+        border: 2px solid
+        border-radius: 33px
+
+    .share-ul
+      list-style: none
+      margin: 0
+      padding: 0
+      background-color: #000
+      overflow: hidden
+      border: 1px solid #979797
+      border-width: 0 1px 1px
+      box-sizing: border-box
+      position: absolute // TODO: improve
+      width: 100%
+      &.hidden
+        display: none
+      a
+        display: block
+        margin: 5px
+        padding: 3px 0
+        color: #FFF
+        font-size: 1.25em
+        transition: color 0.5s, border-color 0.5s
+        border: 2px solid #FFF
+        border-radius: 33px
+        &:hover
+          color: #EEC142
+          border-color: #EEC142
+
+  .logo
+    absolute: left 25%
+    size: 50% header-height
+    font-size: 1.875em
+    line-height: 1.875em
+    a
+      display: block
+      size: 100%
+      max-width: 420px
+      margin: 0 auto
+      position: relative
+      double-border(6px, header-height+2, #FFF)
+
+  .menu
+    absolute: top right 20px
+    z-index: 600
+    
+    .menu-btn
+      display: block
+      padding: 0 10px
+      height: header-height
+      line-height: header-height
+      font-size: 1.25em
+      letter-spacing: 1px
+      .text
+        float: left
+      .icon
+        float: left
+        margin: (header-height - 30px) 0 0 20px
+      .bar
+        display: block
+        background-color: #FFF
+        width: 35px
+        height: 1px
+        & + .bar
+          margin-top: 5px
+
+  +below(625px)
+    text-align: left
+    .share
+      display: none
+
+    .logo
+      position: static
+      display: inline-block
+      width: auto
+      a
+        display: inline-block
+        width: auto
+        max-width: none
+        margin: 0
+      a:before, a:after
+        content: none
+    .menu
+      right: 0
+
+  +between(401px, 625px)
+    .logo a
+      padding: 0 20px
+    .menu
+      padding-left: 8px
+      double-border(6px, header-height+2, #FFF)
+      &:after
+        content: none
+
+  +below(400px)
+    .logo a
+      padding: 0 55px 0 10px
+    .menu .menu-btn
+      .text
+        display: none
+      .icon
+        margin-left: 0
+
+
+#sidenav
+  fixed: right -300px top bottom
+  width: 300px
+  z-index: 600
+  background-color: #e6e6e6
+  overflow-y: auto
+  
+  +below(300px)
+    position: static
+    margin-top: header-height+1
+    width: auto
+  
+  &.hidden
+    display: none
+
+  .close
+    padding: 25px
+    a
+      font-size: 1.5em
+      border-radius: 4px
+      color: #e6e6e6
+      background-color: #222
+      display: inline-block
+      padding: 0 4px 3px
+    i
+      display: block
+
+  ul
+    list-style: none
+    margin: -30px 0 0
+    padding: 0 25px
+    li
+      margin: 30px 0
+    a
+      display: block
+      color: #000
+      font-family: raleway
+      font-size: 1.75em
+      font-weight: bold
+      letter-spacing: 1px
+      text-transform: uppercase
+      &:hover
+        color: #FFF
+
+
+.page-head
+  clearfix()
+  padding: 70px 35px 0 35px
+  margin-bottom: 15px
+  
+  h1
+    font-family: raleway
+    font-size: 4em
+    font-weight: normal
+    letter-spacing: 2px
+    color: #A3A6AC
+    text-transform: uppercase
+    
+    margin: 0 0 10px
+    padding-bottom: 10px
+    float: left
+    position: relative
+    &:before
+      content: ""
+      size: 150px 10px
+      background-color: #E5E5E5
+      absolute: bottom left 8px
+    
+    +below(400px)
+      font-size: 3em
+
+  .filter
+    float: right
+    display: inline-block
+    position: relative
+    
+    text-align: center
+    text-transform: uppercase
+    font-weight: 500
+    letter-spacing: 1px
+    a
+      color: font-light-color
+      font-size: 0.75em
+      letter-spacing: 2px
+      vertical-align: bottom
+
+    .box
+      border: 1px solid #E5E5E5
+      padding: 0 10px
+      min-width: 80px
+      line-height: 50px
+      height: 50px
+      display: inline-block
+
+    .box + .box
+      margin-left: -1px
+      
+    ol, ul
+      list-style: none
+      margin: 0 0 0 -11px
+      padding: 0
+      //absolute: top 51px
+      position: absolute
+      z-index 300
+      background-color: #FFF
+      border: 1px solid #E5E5E5
+      box-sizing: border-box
+      &.hidden
+        display: none
+      li
+        border-bottom: 1px solid #E5E5E5
+        &:last-child
+          border-bottom: 0 none
+      a
+        display: block
+        //text-align: center
+        width: 100px
+        //text-transform: uppercase
+        //font-weight: 500
+        //letter-spacing: 2px
+        //font-size: 0.75em
+        //color: font-light-color
+        line-height: 25px
+   /*> span, > a
+      //float: left
+      //border: 1px solid #E5E5E5
+      //border-left-width: 0
+      //padding: 0 10px
+      //min-width: 80px
+      //line-height: 50px
+      //text-align: center
+      //text-transform: uppercase
+      //font-weight: 500
+    > span
+      //letter-spacing: 1px
+    > a
+      //letter-spacing: 2px
+      //font-size: 0.75em
+      //color: font-light-color
+    ol, ul
+      list-style: none
+      margin: 0
+      padding: 0
+      absolute: top 50px
+      z-index 300
+      background-color: #FFF
+      border: 1px solid #E5E5E5
+      box-sizing: border-box
+      &.hidden
+        display: none
+      li
+        border-bottom: 1px solid #E5E5E5
+        &:last-child
+          border-bottom: 0 none
+      a
+        display: block
+        //text-align: center
+        width: 100px
+        //text-transform: uppercase
+        //font-weight: 500
+        //letter-spacing: 2px
+        //font-size: 0.75em
+        //color: font-light-color
+        line-height: 25px
+    .date-dropdown
+      left: 100px
+    .medium-dropdown
+      right: 0*/

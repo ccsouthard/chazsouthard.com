@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="68px" height="68px" viewBox="0 0 68 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>cross</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Gallery-Inner" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Slideshow" sketch:type="MSArtboardGroup" transform="translate(-966.000000, -72.000000)" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <g sketch:type="MSLayerGroup" transform="translate(100.000000, 59.000000)" id="cross">
+                <g transform="translate(899.588372, 47.219717) rotate(-45.000000) translate(-899.588372, -47.219717) translate(866.588372, 14.219717)" sketch:type="MSShapeGroup">
+                    <path d="M65.7781249,32.9965986 C65.7781249,14.9631746 51.1582287,0.343278494 33.1248048,0.343278494 C15.0913808,0.343278494 0.471484638,14.9631746 0.471484638,32.9965986 C0.471484638,51.0300226 15.0913808,65.6499187 33.1248048,65.6499187 C51.1582287,65.6499187 65.7781249,51.0300226 65.7781249,32.9965986 L65.7781249,32.9965986 Z" id="Path"></path>
+                    <path d="M33.1248048,15.4140416 L33.1248048,50.5791556 L33.1248048,15.4140416 Z" id="Path" transform="translate(33.752753, 32.996599) scale(1, -1) translate(-33.752753, -32.996599) "></path>
+                    <path d="M15.5422478,32.9965986 L50.7073617,32.9965986 L15.5422478,32.9965986 Z" id="Path" transform="translate(33.124805, 33.624547) scale(1, -1) translate(-33.124805, -33.624547) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

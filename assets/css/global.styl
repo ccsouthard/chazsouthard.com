@@ -1,0 +1,26 @@
+@import '_settings'
+@import '_animations'
+@import 'jeet'
+
+normalize-css()
+base()
+
+a
+  text-decoration: none
+  outline: none
+
+figure
+  margin: 0
+
+.page
+  margin-top: header-height
+.page-inner
+  padding: 0 45px
+  +between(546px, 860px)
+    padding: 0 30px
+  +below(545px)
+    padding: 0 20px
+
+@import '_header'
+
+@import '_footer'

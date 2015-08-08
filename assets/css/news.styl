@@ -1,0 +1,44 @@
+@import '_settings'
+@import '_animations'
+@import 'jeet'
+
+.news-page
+  .news-item
+    clearfix()
+    margin: 50px 0
+
+    a:hover
+      text-decoration: underline
+
+    .thumb
+      float: left
+      border: 1px solid #a3a6ac
+      img
+        display: block
+        height: 75px
+  
+    .content
+      float: left
+      max-width: 700px
+      margin-left: 20px
+      border-bottom: 1px solid #E5E5E5
+      
+      p
+        font-size: 1.25em
+        color: #93969c;
+        letter-spacing: 1px
+  
+    header
+      font-family: raleway
+      font-weight: 600
+      color: #3B3D44
+      letter-spacing: 1px
+      h2
+        margin: 0
+        a
+          color: #6d6d6d
+          &:hover
+            color: font-light-color
+      .date
+        text-transform: uppercase
+        display: block

@@ -1,0 +1,39 @@
+header#header
+  .share
+    a(href='#').share-btn
+      span: i.fa.fa-share-alt
+
+    ul.share-ul.hidden
+      li.facebook
+        a(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=http://chazsouthard.com/')
+          i.fa.fa-facebook
+
+      li.twitter
+        a(target='_blank', href='http://twitter.com/intent/tweet?url=http://chazsouthard.com/&text=The%20portfolio%20of%20Chaz%20Southard%0A')
+          i.fa.fa-twitter
+
+      li.gplus
+        a(target='_blank', href='https://plus.google.com/share?url=http://chazsouthard.com/')
+          i.fa.fa-google-plus
+
+  .logo: a(href=relative_path+'home.html') Chaz Southard
+
+  .menu
+    a(href='#').menu-btn
+      span.text Menu
+      span.icon
+        span.bar
+        span.bar
+        span.bar
+
+
+nav#sidenav.hidden
+  .close
+    a(href='#'): i.fa.fa-times
+  ul.menu-ul.hidden
+    li: a(href=relative_path+'index.html') Landing Page
+    li: a(href=relative_path+'home.html') Home
+    li: a(href=relative_path+'gallery.html') Gallery
+    li: a(href=relative_path+'words.html') Words
+    li: a(href=relative_path+'about.html') About
+    li: a(href=relative_path+'news.html') News
