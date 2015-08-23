@@ -31,9 +31,7 @@ mixin display-artwork(mediums, show_dates)
                 p.medium= art.medium
 
   if locals.sorted_artwork.length == 0
-    .artwork.date
-      img(src='img/gallery/white-square.gif')
-      .date-container NONE
+    p: em No results found.
 
 section
   +display-artwork(['oil', 'digital'], true)

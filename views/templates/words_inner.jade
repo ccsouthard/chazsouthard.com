@@ -1,22 +1,22 @@
+- function slugify(name) {
+  - return name.toLowerCase().replace(/[^\w]+/g, '-');
+- }
+
 if !locals.display_type
   - locals.display_type = 'poetry'
 
 mixin display-nav(type)
   each article in locals.words[type]
-    li: a(href='#'+article.title.toLowerCase().replace(/[^\w]+/g, '-'))
+    li: a(href='#'+slugify(article.title))
       span= article.title
 
-mixin display-words(type)
-  - var words = locals.words[type]
-  each article in words
-    article
-      != article.content
+a(name='top')
 
 h2= locals.display_type
 
-nav.sidenav
+nav.wordsnav
   ul
     +display-nav(locals.display_type)
 
 .articles(data-loaded=locals.display_type)
-  +display-words(locals.display_type)
+  include words_inner_article

@@ -13,7 +13,6 @@
     "js-pipeline": "0.2.x",
     "jstransformer-marked": "0.0.1",
     "marked": "0.3.x",
-    "roots": "^3.2.2",
     "roots-yaml": "0.0.4",
     "rupture": "0.6.x",
     "stylus": "0.51.x"

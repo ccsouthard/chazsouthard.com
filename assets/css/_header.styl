@@ -65,8 +65,9 @@
   .logo
     absolute: left 25%
     size: 50% header-height
-    font-size: 1.875em
-    line-height: 1.875em
+    font-size: 1.6em
+    line-height: 2em
+    letter-spacing: 1px
     a
       display: block
       size: 100%
@@ -118,7 +119,7 @@
     .menu
       right: 0
 
-  +between(401px, 625px)
+  +between(441px, 625px)
     .logo a
       padding: 0 20px
     .menu
@@ -127,7 +128,7 @@
       &:after
         content: none
 
-  +below(400px)
+  +below(440px)
     .logo a
       padding: 0 55px 0 10px
     .menu .menu-btn
@@ -138,10 +139,9 @@
 
 
 #sidenav
-  fixed: right -300px top bottom
-  width: 300px
+  fixed: top 51px right bottom left
   z-index: 600
-  background-color: #e6e6e6
+  background-color: rgba(0,0,0,0.9)
   overflow-y: auto
   
   +below(300px)
@@ -153,33 +153,42 @@
     display: none
 
   .close
-    padding: 25px
+    float: right
+    border: 1px solid #FFF
+    border-width: 0 0 1px 1px
     a
       font-size: 1.5em
       border-radius: 4px
       color: #e6e6e6
-      background-color: #222
       display: inline-block
-      padding: 0 4px 3px
+      padding: 15px
     i
       display: block
 
   ul
+    clearfix()
+    text-align: center
     list-style: none
-    margin: -30px 0 0
-    padding: 0 25px
+    margin: 0
+    padding: 0
     li
-      margin: 30px 0
+      box-sizing: border-box
+      padding: 30px 0
+      border-bottom: 1px solid #FFF
+      +above(441px)
+        col(1/2, cycle: 2, gutter: 0)
+        &:nth-child(odd)
+          border-right: 1px solid #FFF
     a
       display: block
-      color: #000
+      color: #FFF
       font-family: raleway
-      font-size: 1.75em
+      font-size: 1.25em
       font-weight: bold
       letter-spacing: 1px
       text-transform: uppercase
       &:hover
-        color: #FFF
+        text-decoration: underline
 
 
 .page-head
@@ -207,6 +216,8 @@
     
     +below(400px)
       font-size: 3em
+      &:before
+        size: 125px 7.5px
 
   .filter
     float: right
@@ -219,7 +230,7 @@
     letter-spacing: 1px
     a
       color: font-light-color
-      font-size: 0.75em
+      font-size: 0.95em
       letter-spacing: 2px
       vertical-align: bottom
 
@@ -238,7 +249,6 @@
       list-style: none
       margin: 0 0 0 -11px
       padding: 0
-      //absolute: top 51px
       position: absolute
       z-index 300
       background-color: #FFF
@@ -252,56 +262,5 @@
           border-bottom: 0 none
       a
         display: block
-        //text-align: center
         width: 100px
-        //text-transform: uppercase
-        //font-weight: 500
-        //letter-spacing: 2px
-        //font-size: 0.75em
-        //color: font-light-color
-        line-height: 25px
-   /*> span, > a
-      //float: left
-      //border: 1px solid #E5E5E5
-      //border-left-width: 0
-      //padding: 0 10px
-      //min-width: 80px
-      //line-height: 50px
-      //text-align: center
-      //text-transform: uppercase
-      //font-weight: 500
-    > span
-      //letter-spacing: 1px
-    > a
-      //letter-spacing: 2px
-      //font-size: 0.75em
-      //color: font-light-color
-    ol, ul
-      list-style: none
-      margin: 0
-      padding: 0
-      absolute: top 50px
-      z-index 300
-      background-color: #FFF
-      border: 1px solid #E5E5E5
-      box-sizing: border-box
-      &.hidden
-        display: none
-      li
-        border-bottom: 1px solid #E5E5E5
-        &:last-child
-          border-bottom: 0 none
-      a
-        display: block
-        //text-align: center
-        width: 100px
-        //text-transform: uppercase
-        //font-weight: 500
-        //letter-spacing: 2px
-        //font-size: 0.75em
-        //color: font-light-color
-        line-height: 25px
-    .date-dropdown
-      left: 100px
-    .medium-dropdown
-      right: 0*/
+        line-height: 30px

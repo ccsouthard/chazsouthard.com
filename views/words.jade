@@ -14,6 +14,18 @@ mixin load-words(types)
 
     - locals.words[type] = site.content.words[type]
 
+    //- sort words by date then name
+    - locals.words[type].sort(function(a,b){
+      - var result = 0;
+      - if (a.date && b.date) {
+        - result = b.date - a.date;
+      - }
+      - if (result == 0) {
+        - result = a.title.localeCompare(b.title);
+      - }
+      - return result;
+    - })
+
 block content
   section.page.words-page
     .page-head
