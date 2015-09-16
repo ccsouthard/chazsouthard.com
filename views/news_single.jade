@@ -5,13 +5,13 @@ block head
   title= post.title + ' | News | Chaz Southard'
 
 block css
-  link(href='../css/news_single.css', rel='stylesheet')
+  link(href=relative_path+'css/item_single.css', rel='stylesheet')
   block news-css
 
 block content
-  article.page.news-item-page
+  article.page.item-single-page
     header
-      a.back-arrow(href='../news.html'): i.fa.fa-long-arrow-left
+      a.back-arrow(href=relative_path+'news.html'): i.fa.fa-long-arrow-left
       h1= post.title
 
     block news-content

@@ -5,11 +5,11 @@ block head
   title= post.title + ' | Exhibit | Chaz Southard'
 
 block css
-  link(href=relative_path+'css/exhibit_single.css', rel='stylesheet')
+  link(href=relative_path+'css/item_single.css', rel='stylesheet')
   block exhibit-css
 
 block content
-  article.page.exhibit-item-page
+  article.page.item-single-page
     header
       a.back-arrow(href=relative_path+'news.html'): i.fa.fa-long-arrow-left
       h1= post.title

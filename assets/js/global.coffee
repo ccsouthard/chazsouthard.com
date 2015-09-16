@@ -18,14 +18,13 @@ $('#header .share .share-ul a').click (e) ->
 $('#header .menu .menu-btn').click (e) ->
     e.preventDefault()
     $sidenav = $('#sidenav')
-    $sidenav.removeClass('hidden')
-    $sidenav.animate(right: 0)
+    if $sidenav.hasClass('hidden')
+        $sidenav.removeClass('hidden').animate({'margin-right':0})
+    else
+        $sidenav.animate({'margin-right':-300}, {complete:-> $(this).addClass('hidden')})
 
 # close side navigation
 $('#sidenav .close a').click (e) ->
     e.preventDefault()
     $sidenav = $('#sidenav')
-    if $(window).width() <= 300
-        $sidenav.addClass('hidden')
-    else
-        $sidenav.animate(right: -$sidenav.width(), -> $sidenav.addClass('hidden'))
+    $sidenav.animate({'margin-right':-300}, {complete:-> $(this).addClass('hidden')})

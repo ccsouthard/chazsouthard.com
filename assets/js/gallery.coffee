@@ -46,13 +46,15 @@ open_modal = (e) ->
     $('body').addClass('modal')
 
     $('html').on('keydown.modal', (e) ->
-        e.preventDefault()
         key = e.which
         if key == 37 # left arrow
+            e.preventDefault()
             $previous_btn.click()
         else if key == 39 # right arrow
+            e.preventDefault()
             $next_btn.click()
         else if key == 27 # escape
+            e.preventDefault()
             $close_btn.click()
         )
 

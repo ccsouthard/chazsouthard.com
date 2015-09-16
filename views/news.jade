@@ -6,6 +6,39 @@ block head
 block css
   link(href='css/news.css', rel='stylesheet')
 
+mixin display-news(post)
+  - var date = new Date(post.date)
+  article.news-item
+
+    header
+      .thumb
+        a(href='.'+post._url): img(src='news/'+post.thumbnail)
+
+      span.date
+        = monthNames[date.getMonth()] + ' '
+        = date.getDate() + ', '
+        = date.getFullYear()
+
+      h2.title
+        a(href='.'+post._url)
+          = post.title
+      
+    p
+      != post.snippet
+      br
+      small: a(href='.'+post._url) read more &raquo;
+
+mixin display-exhibit(exhibit, date)
+  article.exhibit-item
+    .content
+      header
+        span.date
+          = monthNames[date.getMonth()] + ' '
+          = date.getDate() + ', '
+          = date.getFullYear()
+        h4.title
+          a(href='.'+exhibit._url)
+            = exhibit.title
 block content
   section.page.news-page
     .page-head
@@ -23,41 +56,20 @@ block content
       
       - var current_date = new Date()
 
-      //-.upcoming
-        each exhibit in exhibits
-          - var date = new Date(exhibit.date)
-          if date > current_date
-            article.exhibit-item
-              .content
-                header
-                  h2.title
-                    a(href='.'+exhibit._url)
-                      = exhibit.title
-                  span.date
-                    = monthNames[date.getMonth()] + ' '
-                    = date.getDate() + ', '
-                    = date.getFullYear()
-                
-                p
-                  != exhibit.description
+      .articles
+        each post in posts
+          +display-news(post)
 
-      each post in posts
-        - var date = new Date(post.date)
-        article.news-item
-          
-            .thumb
-              a(href='.'+post._url): img(src='news/'+post.thumbnail)
-
-            .content
-              header
-                h2.title
-                  a(href='.'+post._url)
-                    = post.title
-                span.date
-                  = monthNames[date.getMonth()] + ' '
-                  = date.getDate() + ', '
-                  = date.getFullYear()
-              
-              p
-                != post.snippet + ' '
-                small: a(href='.'+post._url) read more &raquo;
+      .exhibits
+        .upcoming
+          h3 Upcoming Exhibits
+          each exhibit in exhibits
+            - var date = new Date(exhibit.date)
+            if date >= current_date
+              +display-exhibit(exhibit, date)
+        .past
+          h3 Past Exhibits
+          each exhibit in exhibits
+            - var date = new Date(exhibit.date)
+            if date < current_date
+              +display-exhibit(exhibit, date)

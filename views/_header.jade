@@ -16,7 +16,7 @@ header#header
         a(target='_blank', href='https://plus.google.com/share?url=http://chazsouthard.com/')
           i.fa.fa-google-plus
 
-  .logo: a(href=relative_path+'home.html') Chaz Southard
+  .logo: a(href=relative_path+'home.html')= heading
 
   .menu
     a(href='#').menu-btn
@@ -28,8 +28,6 @@ header#header
 
 
 nav#sidenav.hidden
-  .close
-    a(href='#'): i.fa.fa-times
   ul.menu-ul.hidden
     li: a(href=relative_path+'index.html') Landing Page
     li: a(href=relative_path+'home.html') Home
@@ -37,3 +35,5 @@ nav#sidenav.hidden
     li: a(href=relative_path+'words.html') Words
     li: a(href=relative_path+'about.html') About
     li: a(href=relative_path+'news.html') News
+  .close
+    a(href='#')

@@ -59,22 +59,40 @@
       line-height: 32px
   
   .profile
+    clearfix()
     .profile-img
       border: 1px solid #979797
       padding: 30px
       background-color: #FFF
-      +below(980px)
-        max-width: 400px
       margin: 0 auto
+      
+      +above(981px)
+        max-width: 300px
+      +below(980px)
+        max-width: 250px
+        padding: 15px
+      
+      +between(680px, 980px)
+        float: left
+        margin: 15px 100px 15px 0
+      +between(680px, 780px)
+        margin-right: 50px
+        
       img
         display: block
         width: 100%
     nav
-      margin-top: 30px
       display: inline-block
-      width: auto 
-      align(horizontal)
-      position: relative
+      width: auto
+      margin-top: 15px
+      +above(981px)
+        margin-top: 30px
+        align(horizontal)
+        position: relative
+      +below(680px)
+        align(horizontal)
+        position: relative
+      
       ul
         margin: 0.5em 0 1.5em
       b
@@ -88,8 +106,6 @@
   
   article
     center(980px)
-    //width: 75%
-    //margin: 0 auto 75px
     
     h2
       color: #A3A6AC
@@ -114,6 +130,7 @@
       margin: 0 auto
 
   .quote
+    margin-top: 50px
     background-color: #000
     color: #FFF
     text-align: center

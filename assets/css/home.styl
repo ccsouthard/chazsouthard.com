@@ -17,7 +17,7 @@ about_color = #50E3C2
 news_bg = #000
 news_color = #50E3C2
 
-body, html, .home-page
+html, body, .home-page
   height: 100%
 
 .home-page
@@ -52,13 +52,15 @@ body, html, .home-page
   
     .arrow
       absolute: bottom 30px left 50%
-      margin-left: -14px
+      margin-left: -21px
       a
         bounce(2s, true, linear)
+        background-color: rgba(255, 255, 255, 0.1)
+        border-radius: 25px
         color: #FFF
         font-size: 1.25em
         display: block
-        padding: 5px 10px
+        padding: 8px 18px
 
   nav
     clearfix()
