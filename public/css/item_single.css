@@ -1,0 +1,104 @@
+@-webkit-keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+@-webkit-keyframes bounceWithDelay {
+  0%, 50%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+@keyframes bounceWithDelay {
+  0%, 50%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+.item-single-page {
+  *zoom: 1;
+  width: auto;
+  max-width: 980px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding: 45px;
+}
+.item-single-page:before,
+.item-single-page:after {
+  content: '';
+  display: table;
+}
+.item-single-page:after {
+  clear: both;
+}
+@media only screen and (min-width: 546px) and (max-width: 860px) {
+  .item-single-page {
+    padding: 30px;
+  }
+}
+@media only screen and (max-width: 545px) {
+  .item-single-page {
+    padding: 20px;
+  }
+}
+.item-single-page a:hover {
+  text-decoration: underline;
+}
+.item-single-page header .back-arrow {
+  float: left;
+  color: #4d4d4d;
+  font-size: 1.25em;
+  margin-top: 8px;
+  margin-right: 20px;
+}
+.item-single-page header .back-arrow:hover {
+  color: #000;
+}
+.item-single-page p {
+  font-size: 1.25em;
+  margin: 15px 0;
+  color: #83868c;
+  letter-spacing: 1px;
+}
+.item-single-page img {
+  max-width: 100%;
+  display: block;
+  margin: 20px auto;
+}
+
+ /*# sourceMappingURL=item_single.css.map */

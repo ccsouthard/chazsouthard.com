@@ -1,0 +1,188 @@
+@-webkit-keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+@-webkit-keyframes bounceWithDelay {
+  0%, 50%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+@keyframes bounceWithDelay {
+  0%, 50%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+@media only screen and (min-width: 780px) {
+  .news-page:before,
+  .news-page:after {
+    content: "";
+    display: table;
+  }
+  .news-page:after {
+    clear: both;
+  }
+  .news-page .articles {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 64.99999999999999%;
+    margin-left: 0%;
+    margin-right: 5%;
+  }
+  .news-page .articles:before,
+  .news-page .articles:after {
+    content: '';
+    display: table;
+  }
+  .news-page .articles:after {
+    clear: both;
+  }
+  .news-page .articles:nth-child(2n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .news-page .articles:nth-child(2n+1) {
+    clear: both;
+  }
+  .news-page .exhibits {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 29.999999999999996%;
+    margin-left: 0%;
+    margin-right: 5%;
+  }
+  .news-page .exhibits:before,
+  .news-page .exhibits:after {
+    content: '';
+    display: table;
+  }
+  .news-page .exhibits:after {
+    clear: both;
+  }
+  .news-page .exhibits:nth-child(2n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .news-page .exhibits:nth-child(2n+1) {
+    clear: both;
+  }
+  .news-page .exhibits .upcoming,
+  .news-page .exhibits .past {
+    border-top: 1px solid #e5e5e5;
+  }
+}
+.news-page .exhibits .upcoming,
+.news-page .exhibits .past {
+  margin-bottom: 30px;
+}
+.news-page .news-item header,
+.news-page .exhibit-item header {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #3b3d44;
+  letter-spacing: 1px;
+}
+.news-page .news-item header a,
+.news-page .exhibit-item header a {
+  color: #6d6d6d;
+}
+.news-page .news-item header a:hover,
+.news-page .exhibit-item header a:hover {
+  color: #4d4d4d;
+  text-decoration: underline;
+}
+.news-page .news-item header .date,
+.news-page .exhibit-item header .date {
+  text-transform: uppercase;
+  display: block;
+}
+.news-page .news-item {
+  margin-bottom: 50px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.news-page .news-item header:before,
+.news-page .news-item header:after {
+  content: "";
+  display: table;
+}
+.news-page .news-item header:after {
+  clear: both;
+}
+.news-page .news-item header .thumb {
+  float: left;
+  margin-right: 30px;
+  border: 1px solid #a3a6ac;
+}
+.news-page .news-item header .thumb img {
+  display: block;
+  height: 75px;
+}
+.news-page .news-item header h2 {
+  margin: 10px 0;
+}
+.news-page .news-item p {
+  font-size: 1.25em;
+  margin: 15px 0;
+  color: #93969c;
+  letter-spacing: 1px;
+}
+.news-page .exhibit-item {
+  margin-bottom: 20px;
+  background-color: #efefef;
+  border: 1px solid #e5e5e5;
+  padding: 10px 5px;
+}
+.news-page .exhibit-item h4 {
+  margin: 10px 0;
+}
+@media only screen and (max-width: 580px) {
+  .news-page .news-item .date,
+  .news-page .exhibit-item .date {
+    font-size: 0.875em;
+  }
+  .news-page .news-item h2 {
+    font-size: 1.125em;
+  }
+  .news-page .news-item p {
+    font-size: 1em;
+  }
+}
+
+ /*# sourceMappingURL=news.css.map */

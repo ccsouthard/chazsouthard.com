@@ -1,0 +1,177 @@
+@-webkit-keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+@-webkit-keyframes bounceWithDelay {
+  0%, 50%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+@keyframes bounceWithDelay {
+  0%, 50%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    -webkit-transform: translate3d(0, 15px, 0);
+    -ms-transform: translate3d(0, 15px, 0);
+    transform: translate3d(0, 15px, 0);
+  }
+}
+.words-page .words:before,
+.words-page .words:after {
+  content: "";
+  display: table;
+}
+.words-page .words:after {
+  clear: both;
+}
+.words-page .words .wordsnav ul {
+  list-style: none;
+  margin: 25px 0 30px;
+  padding: 0;
+}
+.words-page .words .wordsnav li {
+  margin: 15px 0;
+  display: block;
+}
+.words-page .words .wordsnav li a {
+  display: block;
+  font-size: 1.125em;
+  color: #1686af;
+  padding-left: 25px;
+  position: relative;
+}
+.words-page .words .wordsnav li a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5);
+  background-color: #4abbb7;
+  border: 1px solid transparent;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.words-page .words .wordsnav li a:hover:before {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  background-color: transparent;
+  border-color: #4abbb7;
+}
+@media only screen and (min-width: 980px) {
+  .words-page .words .wordsnav {
+    float: left;
+    width: 250px;
+  }
+  .words-page .words .wordsnav.fixed {
+    position: fixed;
+    top: 55px;
+    bottom: 0;
+    overflow-y: auto;
+  }
+  .words-page .words .wordsnav ul {
+    margin: 0 25px 0 0;
+    border-right: 1px solid #9b9b9b;
+  }
+  .words-page .words .articles {
+    margin-left: 300px;
+  }
+}
+.words-page .words > h2 {
+  color: #a3a6ac;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 2.75em;
+  text-transform: capitalize;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+.words-page .words article {
+  margin-bottom: 50px;
+}
+.words-page .words article h3 {
+  font-size: 1.75em;
+  margin: 0 0 25px;
+}
+.words-page .words article p {
+  color: #9b9b9b;
+  line-height: 2em;
+  font-size: 1.25em;
+}
+.words-page .words a.top {
+  color: #6d6d6d;
+}
+.words-page .words a.top .fa {
+  margin-right: 5px;
+}
+.words-page .words a.top:hover {
+  color: #4d4d4d;
+  text-decoration: underline;
+}
+.words-page .quote {
+  background-image: url("../img/words/quote.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 80%;
+  height: 100vh;
+  max-height: 750px;
+  position: relative;
+  padding: 0 50px;
+  margin-top: 100px;
+}
+.words-page .quote .content {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1.875em;
+  letter-spacing: 0.5px;
+  max-width: 500px;
+}
+.words-page .quote .content > p:first-of-type {
+  text-indent: 0.75em;
+}
+
+ /*# sourceMappingURL=words.css.map */
