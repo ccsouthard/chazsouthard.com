@@ -11,6 +11,7 @@
     "jeet": "^6.1.2",
     "jstransformer-marked": "0.0.x",
     "marked": "0.3.x",
+    "roots": "^3.1.0",
     "rupture": "0.6.x",
     "stylus": "0.51.x"
   }
