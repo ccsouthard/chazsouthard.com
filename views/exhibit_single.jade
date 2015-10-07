@@ -1,0 +1,22 @@
+extends layout
+
+block head
+  - relative_path = '../../'
+  title= post.title + ' | Exhibit | Chaz Southard'
+
+block css
+  link(href=relative_path+'css/item_single.css', rel='stylesheet')
+  block exhibit-css
+
+block content
+  article.page.item-single-page
+    header
+      a.back-arrow(href=relative_path+'news.html'): i.fa.fa-long-arrow-left
+      h1= post.title
+      if post.link
+        cite: a(href=post.link) publication
+
+    block exhibit-content
+
+block js
+  block exhibit-js

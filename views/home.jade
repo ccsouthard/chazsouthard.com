@@ -1,0 +1,48 @@
+extends layout
+
+block head
+  title Home | Chaz Southard
+
+block css
+  link(href='css/slider.css', rel='stylesheet')
+  link(href='css/home.css', rel='stylesheet')
+
+block content
+  section.page.home-page
+    .cd-hero
+      ul.cd-hero-slider.autoplay
+        li.selected
+          .slide-1.cd-full-width
+            .hero-content
+              h1 Take a seat &amp; gaze
+        li
+          .slide-2.cd-full-width
+            .hero-content
+              h1 Example Slide
+
+      .arrow
+        a(href='#'): i.fa.fa-long-arrow-down
+
+    //-.hero
+      .hero-content
+        h1 Take a seat &amp; gaze
+
+      .arrow
+        a(href='#'): i.fa.fa-long-arrow-down
+
+    nav
+      a(href='gallery.html').item.gallery
+        p Gallery
+
+      a(href='words.html').item.words
+        p Words
+
+      a(href='about.html').item.about
+        p About
+
+      a(href='news.html').item.news
+        p News
+
+block js
+  script(src='js/home.js')
+  script(src='js/slider.js')

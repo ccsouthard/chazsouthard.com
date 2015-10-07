@@ -1,0 +1,26 @@
+extends layout
+
+block head
+  - heading = 'C. Southard'
+  title Chaz Southard
+
+block css
+  link(href='css/landing.css', rel='stylesheet')
+
+block content
+  section.page.landing-page
+    nav
+      .portal.web
+        a(href='#')
+        h2 Web
+        p Design &amp; Development
+
+      .portal.art
+        a(href='home.html')
+        h2 Art
+        p The Gallery &amp; Words
+
+      .portal.projects
+        a(href='#')
+        h2 Projects
+        p The Lab

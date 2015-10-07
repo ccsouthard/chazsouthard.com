@@ -1,0 +1,98 @@
+@import '_settings'
+@import '_animations'
+@import 'jeet'
+
+.words-page
+  .words
+    clearfix()
+  
+    .wordsnav
+      ul
+        list-style: none
+        margin: 25px 0 30px
+        padding: 0
+      li
+        margin: 15px 0
+        display: block
+        a
+          display: block
+          font-size: 1.125em
+          color: #1686AF
+          padding-left: 25px
+          position: relative
+          &:before
+            content: ""
+            display: block
+            absolute: left top 5px
+            
+            transform: scale(0.5)
+            background-color: #4ABBB7
+            border: 1px solid transparent
+            
+            size: 12px
+            border-radius: 100%
+            transition: all 0.5s ease 0s
+          &:hover:before
+            transform: scale(1)
+            background-color: transparent
+            border-color: #4ABBB7
+  
+    +above(980px)
+      .wordsnav
+        float: left
+        width: 250px
+        &.fixed
+          fixed: top 55px bottom 0
+          overflow-y: auto
+        ul
+          margin: 0 25px 0 0
+          border-right: 1px solid #9B9B9B
+      .articles
+        margin-left: 300px
+
+    > h2
+      color: #A3A6AC
+      font-family: raleway
+      font-weight: 300
+      font-size: 2.75em
+      text-transform: capitalize
+      letter-spacing: 1.5px
+      text-align: center
+
+    article
+      margin-bottom: 50px
+      h3
+        font-size: 1.75em
+        margin: 0 0 25px
+      p
+        color: #9B9B9B
+        line-height: 2em
+        font-size: 1.25em
+      
+    a.top
+      color: #6d6d6d
+      .fa
+        margin-right: 5px
+      &:hover
+        color: font-light-color
+        text-decoration: underline
+  
+  .quote
+    background-image: url('../img/words/quote.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center 80%
+    height: 100vh
+    max-height: 750px
+    position: relative
+    padding: 0 50px
+    margin-top: 100px
+    
+    .content
+      align(vertical)
+      color: #FFF
+      font-size: 1.875em
+      letter-spacing: 0.5px
+      max-width: 500px
+      > p:first-of-type
+        text-indent: 0.75em

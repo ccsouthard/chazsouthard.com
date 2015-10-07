@@ -1,0 +1,22 @@
+extends layout
+
+block head
+  - relative_path = '../'
+  title= post.title + ' | News | Chaz Southard'
+
+block css
+  link(href=relative_path+'css/item_single.css', rel='stylesheet')
+  block news-css
+
+block content
+  article.page.item-single-page
+    header
+      a.back-arrow(href=relative_path+'news.html'): i.fa.fa-long-arrow-left
+      h1= post.title
+      if post.link
+        cite: a(href=post.link) publication
+
+    block news-content
+
+block js
+  block news-js

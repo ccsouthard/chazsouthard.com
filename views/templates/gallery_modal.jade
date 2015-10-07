@@ -1,0 +1,13 @@
+- var art = artwork[index]
+.content
+  img(src=art._categories.join('/')+'/assets/'+art._img)
+.caption
+  - for (var key in art) {
+    - console.log(key);
+    if key != 'content' && !(key.indexOf('_') === 0)
+      p
+        span= key + ':'
+        = art[key]
+  - }
+  if !(art.content.indexOf('---') === 0)
+    != art.content

@@ -1,0 +1,27 @@
+_animated(duration=1s)
+  animation-duration: duration
+  animation-fill-mode: both
+
+_infinite()
+  animation-iteration-count: infinite
+
+bounce_distance = 15px
+
+bounce(duration=1s, delay=false, function=ease-in-out)
+  _animated(duration)
+  _infinite()
+  animation-name: delay ? bounceWithDelay : bounce
+  transform-origin: center bottom
+  animation-timing-function: function
+
+@keyframes bounce
+  0%, 100%
+    transform: translate3d(0, 0, 0)
+  50%
+    transform: translate3d(0, bounce_distance, 0)
+
+@keyframes bounceWithDelay
+  0%, 50%, 100%
+    transform: translate3d(0, 0, 0)
+  25%
+    transform: translate3d(0, bounce_distance, 0)

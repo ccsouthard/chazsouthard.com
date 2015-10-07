@@ -1,0 +1,49 @@
+extends layout
+
+block head
+  title Words | Chaz Southard
+
+block css
+  link(href='css/words.css', rel='stylesheet')
+
+mixin load-words(types)
+  - locals.words = {}
+  each type in types
+
+    a(href='#'+type, data-type=type).box: span= type
+
+    - locals.words[type] = site.content.words[type]
+
+    //- sort words by date then name
+    - locals.words[type].sort(function(a,b){
+      - var result = 0;
+      - if (a.date && b.date) {
+        - result = b.date - a.date;
+      - }
+      - if (result == 0) {
+        - result = a.title.localeCompare(b.title);
+      - }
+      - return result;
+    - })
+
+block content
+  section.page.words-page
+    .page-head
+        h1 Words
+        .filter
+          span.box Go To:
+          +load-words(['poetry', 'stories', 'articles'])
+
+    .words.page-inner
+      include templates/words_inner
+
+    .quote
+      .content
+        != site.content.words['quote'][0].content
+
+
+block js
+  script.
+    var words = !{JSON.stringify(locals.words)};
+  script(src='js/words.js')
+

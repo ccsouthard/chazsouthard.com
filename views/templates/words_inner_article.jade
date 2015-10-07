@@ -1,0 +1,20 @@
+- function slugify(name) {
+  - return name.toLowerCase().replace(/[^\w]+/g, '-');
+- }
+
+if !locals.display_article
+  - locals.display_article = slugify(locals.words[locals.display_type][0].title)
+
+
+each article in locals.words[locals.display_type]
+  if locals.display_article == slugify(article.title)
+    article
+      header
+        h3= article.title
+        if article.link
+          cite: a(href=article.link) publication
+      != article.content
+
+    a(href='#top').top
+      i.fa.fa-arrow-up
+      span back to top

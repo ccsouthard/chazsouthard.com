@@ -1,0 +1,76 @@
+@import '_settings'
+@import '_animations'
+@import 'jeet'
+
+.news-page
+  
+  +above(780px)
+    clearfix()
+    .articles
+      col(4/6, cycle: 2, gutter: 5)
+    .exhibits
+      col(2/6, cycle: 2, gutter: 5)
+      .upcoming, .past
+        border-top: 1px solid #E5E5E5
+
+  .exhibits
+    .upcoming, .past
+      margin-bottom: 30px
+  
+  .news-item, .exhibit-item
+    header
+      font-family: raleway
+      font-weight: 600
+      color: #3B3D44
+      letter-spacing: 1px
+      a
+        color: #6d6d6d
+        &:hover
+          color: font-light-color
+          text-decoration: underline
+      .date
+        text-transform: uppercase
+        display: block
+
+  .news-item
+    margin-bottom: 50px
+    border-bottom: 1px solid #E5E5E5
+    
+    header
+      clearfix()
+      
+      .thumb
+        float: left
+        margin-right: 30px
+        border: 1px solid #a3a6ac
+        img
+          display: block
+          height: 75px
+  
+      h2
+        margin: 10px 0
+
+    p
+      font-size: 1.25em
+      margin: 15px 0
+      color: #93969c;
+      letter-spacing: 1px
+  
+  .exhibit-item
+    margin-bottom: 20px
+    background-color: #EFEFEF
+    border: 1px solid #E5E5E5
+    padding: 10px 5px
+    h4
+      margin: 10px 0
+  
+  +below(580px)
+    .news-item, .exhibit-item
+      .date
+        font-size: 0.875em
+    .news-item
+      h2
+        font-size: 1.125em
+      p
+        font-size: 1em
+

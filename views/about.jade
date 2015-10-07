@@ -1,0 +1,49 @@
+extends layout
+
+block head
+  title About | Chaz Southard
+
+block css
+  link(href='css/about.css', rel='stylesheet')
+
+block content
+  section.page.about-page
+    .page-head
+      h1 About
+
+    .about.page-inner
+
+      .hero-boxes: .hero-container
+
+        .hero-box.left.artist-statement
+          != site.content.about['artist-statement'][0].content
+
+        .hero-box.right.profile
+          .profile-img
+            img(src='img/about/profile.jpg')
+          nav
+            b Selected Publications
+            ul
+              li: a(href='#') Link
+              li: a(href='#') Link
+              li: a(href='#') Link
+            b Selected Galleries
+            ul
+              li: a(href='#') Boston
+              li: a(href='#') Newburyport
+              li: a(href='#') City
+              li: a(href='#') City
+
+      article.biography
+        h2#biography Biography
+        != site.content.about['biography'][0].content
+
+      article.process
+        h2 Process
+        != site.content.about['process'][0].content
+
+    .quote
+      .content
+        != site.content.about['quote'][0].content
+      
+      .quote-img

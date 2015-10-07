@@ -1,0 +1,60 @@
+@import '_settings'
+@import '_animations'
+@import 'jeet'
+
+web_img = url('../img/landing/web.jpg')
+art_img = url('../img/landing/art.jpg')
+projects_img = url('../img/landing/projects.jpg')
+
+#header
+  .menu
+    display: none
+  +below(625px)
+    text-align: center
+    .logo a
+      padding: 0
+
+.landing-page
+  nav
+    center(880px)
+    padding: 40px 0
+    text-align: center
+    text-transform: uppercase
+
+  .portal
+    margin-bottom: 40px
+    col(1/3)
+    +below(880px)
+      stack()
+
+  a
+    display: block
+    size: 275px
+    margin: 0 auto
+    border: 1px solid #9B9B9B
+    background-size: cover
+    background-position: center
+    
+    // desaturate on hover
+    transition: -webkit-filter 0.25s, filter 0.25s
+    transition: border-radius 0.3s
+    &:hover
+      filter: grayscale(100%)
+      border-radius: 140px
+      
+  .web a
+    background-image: web_img
+  .art a
+    background-image: art_img
+  .projects a
+    background-image: projects_img
+
+  h2
+    letter-spacing: 2.2px
+
+  p
+    font-family: raleway
+    font-size: 12px
+    font-weight: 600
+    letter-spacing: 2px
+    color: font-light-color

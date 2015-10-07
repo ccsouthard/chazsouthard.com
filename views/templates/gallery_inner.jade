@@ -1,0 +1,37 @@
+//- +sort_artwork(mediums) must be called first!
+mixin display-artwork(mediums, show_dates)
+  - var last_date = -1
+  each art, index in locals.sorted_artwork
+
+    - var display = false
+    each medium in mediums
+      if art._attributes['data-medium'] == medium
+        - display = true
+        - break
+
+    if !display
+      continue
+
+    //- add a date tile if the date has changed
+    if show_dates && (last_date == -1 || art.date < last_date)
+      - last_date = art.date
+      .artwork.date(data-date=last_date)
+        img(src='img/gallery/white-square.gif')
+        .date-container= last_date
+
+    figure.artwork(data-index=index)&attributes(art._attributes)
+      a(href='#')
+        img(src=art._categories.join('/')+'/assets/'+art._img.replace('.jpg','-400x400.jpg'))
+        figcaption
+          .caption-container
+            .caption-content
+              if art.title
+                p.title= art.title
+              if art.medium
+                p.medium= art.medium
+
+  if locals.sorted_artwork.length == 0
+    p: em No results found.
+
+section
+  +display-artwork(['oil', 'digital'], true)
