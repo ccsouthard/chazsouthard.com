@@ -3,5 +3,4 @@ _render: false
 ---
 
 ## Moment of Inspiration
-
-Donec id elit non mi porta gravida at eget metus. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+Inspiration is highly overrated. If you sit around and wait for the clouds to part, it's not liable to ever happen. More often than not, work is salvation. -Chuck Close

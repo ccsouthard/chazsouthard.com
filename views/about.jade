@@ -22,21 +22,35 @@ block content
           .profile-img
             img(src='img/about/profile.jpg')
           nav
-            b Selected Publications
+            b Selected Publications & Galleries
             ul
-              li: a(href='#') Link
-              li: a(href='#') Link
-              li: a(href='#') Link
-            b Selected Galleries
+              li: a(href='http://www.bostonmagazine.com/health/blog/2013/06/14/art-therapy-exhibit-boston/') Boston Magazine
+              li: a(href='http://www.newburyportart.org/Archive/WJS2_06/winter2_06.html') Newburyport
+              li: a(href='http://www.sunnesavage.com/exhibition/') Boston | Sunne Savage
+              li: a(href='http://www.travisroyfoundation.org/artbeyonds-opening-gives-back-to-the-travis-roy-foundation/') Travis Roy Foundation
+          
+            b Selected Juried Exhibit History
             ul
-              li: a(href='#') Boston
-              li: a(href='#') Newburyport
+              li: a(href='http://www.sunnesavage.com/exhibition/') Newburyport Art Association 2006
+              li: a(href='http://www.newburyportart.org/Archive/WJS2_06/winter2_06.html') Topsfield 2011 
+              li: a(href='#') Boston 2013
+              li: a(href='#') Boston 2014
+          //-
+            - [Newburyport Art Association 2006](http://www.newburyportart.org/Archive/WJS2_06/winter2_06.html)
+            - [Topsfield 2011 ](exhibits/topsfield-exhibit-2014.md)
+            - [Boston 2013](exhibits/boston-exhibit-2013.md)
+            - [Boston 2014](exhibits/boston-exhibit-2014.md)
+
+          //-  b Selected Galleries
+            ul
+              li: a(href='http://www.sunnesavage.com/exhibition/') Newburyport Art Association 2006
+              li: a(href='http://www.newburyportart.org/Archive/WJS2_06/winter2_06.html') Topsfield 2011 
               li: a(href='#') City
               li: a(href='#') City
 
       article.biography
-        h2#biography Biography
-        != site.content.about['biography'][0].content
+          h2#biography Biography
+          != site.content.about['biography'][0].content --//
 
       article.process
         h2 Process
