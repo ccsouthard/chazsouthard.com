@@ -19,7 +19,9 @@ mixin load-artwork(mediums)
   - locals.sorted_artwork.sort(function(a,b){
     - var result = b.date - a.date;
     - if (result == 0) {
-      - result = a.title.toString().toLowerCase().localeCompare(b.title);
+      - var titleA = a.title.toString().toLowerCase();
+      - var titleB = b.title.toString().toLowerCase();
+      - result = titleA.localeCompare(titleB);
     - }
     - return result;
   - })
