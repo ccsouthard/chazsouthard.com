@@ -5,7 +5,7 @@
 .words-page
   .words
     clearfix()
-  
+
     .wordsnav
       ul
         list-style: none
@@ -36,20 +36,11 @@
             transform: scale(1)
             background-color: transparent
             border-color: #4ABBB7
+      li:first-child
+        margin-top: 0
+      li:last-child
+        margin-bottom: 0
   
-    +above(980px)
-      .wordsnav
-        float: left
-        width: 250px
-        &.fixed
-          fixed: top 55px bottom 0
-          overflow-y: auto
-        ul
-          margin: 0 25px 0 0
-          border-right: 1px solid #9B9B9B
-      .articles
-        margin-left: 300px
-
     > h2
       color: #A3A6AC
       font-family: raleway
@@ -57,7 +48,7 @@
       font-size: 2.75em
       text-transform: capitalize
       letter-spacing: 1.5px
-      text-align: center
+      text-align: left
 
     article
       margin-bottom: 50px
@@ -68,7 +59,7 @@
         color: #9B9B9B
         line-height: 2em
         font-size: 1.25em
-      
+
     a.top
       color: #6d6d6d
       .fa
@@ -76,7 +67,21 @@
       &:hover
         color: font-light-color
         text-decoration: underline
-  
+
+    +above(980px)
+      .wordsnav
+        float: left
+        position: sticky
+        top: 60px
+        width: 250px
+        ul
+          margin: 0
+          border-right: 1px solid #9B9B9B
+      .articles
+        margin-left: 300px
+      > h2
+        text-align: center
+
   .quote
     background-image: url('../img/words/quote.jpg')
     background-repeat: no-repeat

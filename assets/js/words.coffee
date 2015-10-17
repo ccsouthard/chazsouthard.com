@@ -39,15 +39,3 @@ $('.filter a').click (e) ->
 	loaded = $('.words .articles').data('loaded')
 	if type != loaded
 		load_type(type)
-
-# wordsnav auto-scroll
-is_nav_fixed = false
-nav_scroll = ->
-	if window.scrollY > $articles.offset().top-55 and !is_nav_fixed
-		$wordsnav.addClass('fixed')
-		is_nav_fixed = true
-	else if window.scrollY < $articles.offset().top-55 and is_nav_fixed
-		$wordsnav.removeClass('fixed')
-		is_nav_fixed = false
-$(window).scroll(nav_scroll)
-nav_scroll()
