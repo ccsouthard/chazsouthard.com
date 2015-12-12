@@ -12,11 +12,28 @@ html
 
     link(href='//fonts.googleapis.com/css?family=Raleway:700,600,400,300,200', rel='stylesheet')
     link(href=relative_path+'css/font-awesome.min.css', rel='stylesheet')
-        
-    script(src='//use.typekit.net/ddz8cuy.js')
-    script try{Typekit.load();}catch(e){}
-
     link(href=relative_path+'css/global.css', rel='stylesheet')
+
+    script.
+      (function() {
+        var config = {
+          kitId: 'ddz8cuy'
+        };
+        var d = false;
+        var tk = document.createElement('script');
+        tk.src = '//use.typekit.net/' + config.kitId + '.js';
+        tk.type = 'text/javascript';
+        tk.async = 'true';
+        tk.onload = tk.onreadystatechange = function() {
+          var rs = this.readyState;
+          if (d || rs && rs != 'complete' && rs != 'loaded') return;
+          d = true;
+          try { Typekit.load(config); } catch (e) {}
+        };
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(tk, s);
+      })();
+
     block css
 
   body
