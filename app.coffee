@@ -2,6 +2,7 @@ axis            = require 'axis'
 jeet            = require 'jeet'
 rupture         = require 'rupture'
 autoprefixer    = require 'autoprefixer-stylus'
+ArtworkResize   = require './artwork-resize'
 dynamic_content = require 'dynamic-content'
 ClientTemplates = require 'client-templates'
 
@@ -10,7 +11,8 @@ module.exports =
 
   extensions: [
     dynamic_content(),
-    ClientTemplates(base: 'views/templates/')
+    ClientTemplates(base: 'views/templates/'),
+    ArtworkResize()
   ]
 
   stylus:
